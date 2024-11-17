@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f0e17;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tombol {
+  font-size: 17px;
+  border-radius: 12px;
+  background: linear-gradient(
+    180deg,
+    rgb(56, 56, 56) 0%,
+    rgb(36, 36, 36) 66%,
+    rgb(41, 41, 41) 100%
+  );
+  color: rgb(218, 218, 218);
+  border: none;
+  padding: 2px;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.tombol span {
+  border-radius: 10px;
+  padding: 0.8em 1.3em;
+  padding-right: 1.2em;
+  text-shadow: 0px 0px 20px #4b4b4b;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  transition: all 0.3s;
+  background-color: rgb(29, 29, 29);
+  background-image: radial-gradient(
+      at 95% 89%,
+      rgb(15, 15, 15) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 0% 100%, rgb(17, 17, 17) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgb(29, 29, 29) 0px, transparent 50%);
+}
+
+.tombol:hover span {
+  background-color: rgb(26, 25, 25);
+}
+
+.lapisan-tombol {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-conic-gradient(
+      rgb(48, 47, 47) 0.0000001%,
+      rgb(51, 51, 51) 0.000104%
+    )
+    60% 60%/600% 600%;
+  filter: opacity(10%) contrast(105%);
+  -webkit-filter: opacity(10%) contrast(105%);
+}
+
+.tombol svg {
+  width: 15px;
+  height: 15px;
+}
+
+.tombol:hover {
+  background: linear-gradient(
+    180deg,
+    rgb(76, 76, 76) 0%,
+    rgb(56, 56, 56) 66%,
+    rgb(41, 41, 41) 100%
+  );
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.tombol:hover span {
+  background-color: rgb(36, 35, 35);
+  background-image: radial-gradient(
+      at 95% 89%,
+      rgb(20, 20, 20) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 0% 100%, rgb(22, 22, 22) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgb(35, 35, 35) 0px, transparent 50%);
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 0px 10px rgb(150, 150, 150);
+  transition: all 0.3s ease;
+}
+
+.tombol:hover .lapisan-tombol {
+  filter: opacity(20%) contrast(120%);
+  animation: efek 1s linear infinite;
+}
+
+@keyframes efek {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
